@@ -1,94 +1,219 @@
-body {
-    font-family: Arial, sans-serif;
-    background: #f4f6f9;
+/* Reset */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+/* Переменные */
+:root {
+    --bg: #f5f5f7;
+    --card: rgba(255,255,255,0.8);
+    --text: #1d1d1f;
+    --subtext: #6e6e73;
+    --border: rgba(0,0,0,0.08);
+    --accent: #0071e3;
+    --accent-hover: #005bb5;
+    --danger: #ff3b30;
+    --radius: 16px;
+}
+
+/* BODY */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* Заголовок */
-h1 {
-    margin-top: 30px;
-    color: #333;
+/* HEADER (как Apple navbar) */
+.header {
+    width: 100%;
+    padding: 12px 40px;
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* Общие стили экранов */
+.logo {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.header-right span {
+    font-size: 14px;
+    color: var(--subtext);
+}
+
+/* КАРТОЧКИ */
 section {
-    width: 320px;
-    background: white;
-    padding: 20px;
-    margin-top: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    width: 360px;
+    background: var(--card);
+    backdrop-filter: blur(20px);
+    margin-top: 40px;
+    padding: 30px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
-/* Заголовки внутри экранов */
+/* Заголовки */
 section h2 {
+    font-size: 22px;
+    font-weight: 600;
     text-align: center;
-    margin-bottom: 15px;
-    color: #222;
+    margin-bottom: 20px;
 }
 
-/* Поля ввода */
+/* INPUT */
 input {
     width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    outline: none;
+    padding: 12px;
+    margin-bottom: 14px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: white;
+    font-size: 14px;
     transition: 0.2s;
 }
 
 input:focus {
-    border-color: #4a90e2;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px rgba(0,113,227,0.1);
+    outline: none;
 }
 
-/* Кнопки */
+/* BUTTON */
 button {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
+    border-radius: 12px;
     border: none;
-    border-radius: 8px;
-    background: #4a90e2;
+    background: var(--accent);
     color: white;
+    font-weight: 500;
     font-size: 14px;
     cursor: pointer;
     transition: 0.2s;
 }
 
 button:hover {
-    background: #357bd8;
+    background: var(--accent-hover);
+}
+
+/* Вторичные кнопки */
+#goToLoginBtn,
+#goToRegisterBtn {
+    background: transparent;
+    color: var(--accent);
+}
+
+#goToLoginBtn:hover,
+#goToRegisterBtn:hover {
+    text-decoration: underline;
+}
+
+/* Logout */
+#headerLogout {
+    width: auto;
+    padding: 6px 12px;
+    background: transparent;
+    color: var(--danger);
+}
+
+#headerLogout:hover {
+    background: rgba(255,59,48,0.1);
 }
 
 /* Ошибки */
 p {
-    color: red;
-    font-size: 14px;
+    font-size: 13px;
+    color: var(--danger);
     text-align: center;
+    margin-top: 5px;
 }
 
-/* Магазин */
+/* SHOP */
 #shopScreen {
-    width: 400px;
+    width: 440px;
 }
 
-#productList, #cartList {
-    background: #f9f9f9;
-    padding: 10px;
-    border-radius: 8px;
-    margin-top: 10px;
-}
-
-/* Кнопка выхода */
-#logoutBtn {
-    background: #e74c3c;
+/* ТОВАРЫ */
+#productList div {
+    padding: 14px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
     margin-bottom: 10px;
+    background: white;
+    transition: 0.2s;
 }
 
-#logoutBtn:hover {
-    background: #c0392b;
+#productList div:hover {
+    transform: scale(1.01);
+}
+
+/* КНОПКА добавить */
+.addToCartBtn {
+    margin-top: 8px;
+    font-size: 13px;
+}
+
+/* КОРЗИНА */
+#cartList div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    border-radius: 12px;
+    background: white;
+    border: 1px solid var(--border);
+    margin-bottom: 8px;
+}
+
+/* Удалить */
+.removeFromCartBtn {
+    width: auto;
+    padding: 5px 10px;
+    font-size: 12px;
+    background: transparent;
+    color: var(--danger);
+}
+
+.removeFromCartBtn:hover {
+    background: rgba(255,59,48,0.1);
+}
+
+/* ИТОГ */
+#cartTotal {
+    margin-top: 10px;
+    text-align: right;
+    font-weight: 500;
+}
+
+/* АНИМАЦИЯ */
+section {
+    animation: fade 0.4s ease;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
