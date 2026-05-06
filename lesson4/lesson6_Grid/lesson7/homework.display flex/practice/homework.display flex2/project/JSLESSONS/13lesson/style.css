@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #111827, #1e293b, #020617);
+    color: #f8fafc;
+
+    display: flex;
+    justify-content: center;
+
+    padding: 40px 16px;
+}
+
+
+.app {
+    width: 100%;
+    max-width: 1100px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+
+.screen {
+    background: rgba(30, 41, 59, 0.85);
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    border-radius: 20px;
+    padding: 24px;
+    margin-bottom: 20px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+input {
+    width: 260px;
+    padding: 10px;
+    margin: 6px 0 12px 0;
+    border-radius: 10px;
+    border: 1px solid #334155;
+    background: #0f172a;
+    color: #f8fafc;
+}
+
+
+button {
+    padding: 10px 14px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+
+    background: #2563eb;
+    color: white;
+
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
+
+#logoutBtn {
+    margin-top: 0;
+    background: #dc2626;
+}
+
+#logoutBtn:hover {
+    background: #b91c1c;
+}
+
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+    margin-top: 10px;
+}
+
+.products > div {
+    background: rgba(15, 23, 42, 0.9);
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    border-radius: 16px;
+    padding: 14px;
+}
+
+.products img {
+    width: 100%;
+    height: 140px;
+    object-fit: contain;
+    background: white;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+
+#productDetailBlock img {
+    width: 200px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+
+#loginMessage {
+    margin-top: 10px;
+    color: #f87171;
+}
